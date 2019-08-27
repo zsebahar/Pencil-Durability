@@ -12,5 +12,13 @@ namespace Pencil_Durability_Kata
             string result = pencilDurability.Write("t");
             Assert.Equal("t", result);
         }
+
+        [Fact]
+        public void WhenDurabilityIsOneAndPencilDurabilityWritesTwoLettersReturnOnlyFirstLetter()
+        {
+            PencilDurability pencilDurability = new PencilDurability(1);
+            string result = pencilDurability.Write("te");
+            Assert.Equal("t", result);
+        }
     }
 }

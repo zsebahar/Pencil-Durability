@@ -4,16 +4,26 @@ namespace Pencil_Durability_Kata
 {
     internal class PencilDurability
     {
-        private int v;
+        private int durability;
 
-        public PencilDurability(int v)
+        public PencilDurability(int durability)
         {
-            this.v = v;
+            this.durability = durability;
         }
 
-        public string Write(string v)
+        public string Write(string textToWrite)
         {
-            return v;
+            string result = string.Empty;
+            for(int i = 0; i < textToWrite.Length; i++)
+            {
+                if(durability == 0)
+                {
+                    break;
+                }
+                result += textToWrite[i];
+                durability--;
+            }
+            return result;
         }
     }
 }
