@@ -62,5 +62,14 @@ namespace Pencil_Durability_Kata
             int durability = pencilDurability.GetDurability();
             Assert.Equal(1, durability);
         }
+
+        [Fact]
+        public void WhenPencilDurabilityCallsInitializePaperMethodThenTextOnPaperCanBeRead()
+        {
+            PencilDurability pencilDurability = new PencilDurability(1);
+            string paper = "Test paper";
+            pencilDurability.InitializePaper(paper);
+            Assert.Equal("Test paper", pencilDurability.GetPaperText());
+        }
     }
 }

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Pencil_Durability_Kata
 {
     internal class PencilDurability
     {
         private int durability;
+        private string paper;
 
         public PencilDurability(int durability)
         {
@@ -36,6 +38,16 @@ namespace Pencil_Durability_Kata
         public int GetDurability()
         {
             return durability;
+        }
+
+        public void InitializePaper(string paper)
+        {
+            this.paper = paper;
+        }
+
+        public string GetPaperText()
+        {
+            return paper;
         }
     }
 }
