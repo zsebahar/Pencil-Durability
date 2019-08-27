@@ -20,7 +20,7 @@ namespace Pencil_Durability_Kata
                 {
                     durability -= 2;
                 }
-                else
+                else if(textToWrite[i] != ' ')
                 {
                     durability--;
                 }
@@ -31,6 +31,11 @@ namespace Pencil_Durability_Kata
                 result += textToWrite[i];
             }
             return result;
+        }
+
+        public int GetDurability()
+        {
+            return durability;
         }
     }
 }
