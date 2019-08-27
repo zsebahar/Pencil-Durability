@@ -8,13 +8,13 @@ namespace Pencil_Durability_Kata
         private int durability;
         private string paper;
         private int length;
-        private int initialDurability;
+        private readonly int initialDurability;
 
         public PencilDurability(int durability, int length)
         {
             this.durability = durability;
             initialDurability = durability;
-            this.paper = string.Empty;
+            paper = string.Empty;
             this.length = length;
         }
 
@@ -22,7 +22,7 @@ namespace Pencil_Durability_Kata
         {
             for(int i = 0; i < textToWrite.Length; i++)
             {
-                if (Char.IsUpper(textToWrite[i]))
+                if (char.IsUpper(textToWrite[i]))
                 {
                     durability -= 2;
                 }

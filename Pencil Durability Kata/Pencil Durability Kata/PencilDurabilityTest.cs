@@ -6,7 +6,7 @@ namespace Pencil_Durability_Kata
     public class PencilDurabilityTest
     {
         [Fact]
-        public void WhenDurabilityIsOneAndPencilDurabilityWritesOneLetterReturnSameLetter()
+        public void VerifyWhenDurabilityIsOneAndPencilWritesOneLetterTheSameLetterIsReturned()
         {
             PencilDurability pencilDurability = new PencilDurability(1, 1);
             string result = pencilDurability.Write("t");
@@ -14,7 +14,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsOneAndPencilDurabilityWritesTwoLettersReturnOnlyFirstLetter()
+        public void VerifyWhenDurabilityIsOneAndPencilWritesTwoLettersOnlyFirstLetterIsReturned()
         {
             PencilDurability pencilDurability = new PencilDurability(1, 1);
             string result = pencilDurability.Write("te");
@@ -22,7 +22,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsTwoAndPencilDurabilityWritesTwoLettersReturnSameTwoLetters()
+        public void VerifyWhenDurabilityIsTwoAndPencilWritesTwoLettersSameTwoLettersAreReturned()
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1);
             string result = pencilDurability.Write("te");
@@ -30,7 +30,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsOneAndPencilDurabilityWritesCapitalLetterReturnEmptyString()
+        public void VerifyWhenDurabilityIsOneAndPencilWritesACapitalLetterAnEmptyStringIsReturned()
         {
             PencilDurability pencilDurability = new PencilDurability(1, 1);
             string result = pencilDurability.Write("A");
@@ -38,7 +38,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsTwoAndPencilDurabilityWritesOneCapitalLetterReturnThatCapitalLetter()
+        public void VerifyWhenDurabilityIsTwoAndPencilWritesOneCapitalLetterTheSameLetterIsReturned()
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1);
             string result = pencilDurability.Write("A");
@@ -46,7 +46,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsTwoAndPencilDurabilityWritesOneLowerCaseLetterAndSpaceDurabilityIsOne()
+        public void VerifyWhenDurabilityIsTwoAndPencilWritesOneLowerCaseLetterAndOneSpaceDurabilityIsOne()
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1);
             pencilDurability.Write("a ");
@@ -55,7 +55,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenDurabilityIsTwoAndPencilDurabilityWritesOneLowerCaseLetterAndNewlineDurabilityIsOne()
+        public void VerifyWhenDurabilityIsTwoAndPencilWritesOneLowerCaseLetterAndNewlineDurabilityIsOne()
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1);
             pencilDurability.Write("a\n");
@@ -64,7 +64,7 @@ namespace Pencil_Durability_Kata
         }
 
         [Fact]
-        public void WhenPencilDurabilityCallsInitializePaperMethodThenTextOnPaperCanBeRead()
+        public void VerifyWhenPaperIsInitializedThenTextOnPaperCanBeRead()
         {
             PencilDurability pencilDurability = new PencilDurability(1, 1);
             string paper = "Test paper";
