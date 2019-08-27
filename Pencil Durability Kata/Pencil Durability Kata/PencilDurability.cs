@@ -56,8 +56,11 @@ namespace Pencil_Durability_Kata
 
         public void Sharpen()
         {
-            length -= 1;
-            durability = initialDurability;
+            if (length > 0)
+            {
+                length -= 1;
+                durability = initialDurability;
+            }
         }
 
         public int GetLength()
