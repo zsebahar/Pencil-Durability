@@ -7,11 +7,13 @@ namespace Pencil_Durability_Kata
     {
         private int durability;
         private string paper;
+        private int length;
 
-        public PencilDurability(int durability)
+        public PencilDurability(int durability, int length)
         {
             this.durability = durability;
             this.paper = string.Empty;
+            this.length = length;
         }
 
         public string Write(string textToWrite)
@@ -48,6 +50,16 @@ namespace Pencil_Durability_Kata
         public string GetPaperText()
         {
             return paper;
+        }
+
+        public void Sharpen()
+        {
+            length -= 1;
+        }
+
+        public int GetLength()
+        {
+            return length;
         }
     }
 }
