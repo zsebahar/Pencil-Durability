@@ -53,5 +53,14 @@ namespace Pencil_Durability_Kata
             int durability = pencilDurability.GetDurability();
             Assert.Equal(1, durability);
         }
+
+        [Fact]
+        public void WhenDurabilityIsTwoAndPencilDurabilityWritesOneLowerCaseLetterAndNewlineDurabilityIsOne()
+        {
+            PencilDurability pencilDurability = new PencilDurability(2);
+            pencilDurability.Write("a\n");
+            int durability = pencilDurability.GetDurability();
+            Assert.Equal(1, durability);
+        }
     }
 }

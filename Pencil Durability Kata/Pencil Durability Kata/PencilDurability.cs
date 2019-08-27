@@ -20,7 +20,7 @@ namespace Pencil_Durability_Kata
                 {
                     durability -= 2;
                 }
-                else if(textToWrite[i] != ' ')
+                else if(textToWrite[i] != ' ' && textToWrite[i] != '\n')
                 {
                     durability--;
                 }
