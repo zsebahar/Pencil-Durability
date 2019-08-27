@@ -11,11 +11,11 @@ namespace Pencil_Durability_Kata
         public PencilDurability(int durability)
         {
             this.durability = durability;
+            this.paper = string.Empty;
         }
 
         public string Write(string textToWrite)
         {
-            string result = string.Empty;
             for(int i = 0; i < textToWrite.Length; i++)
             {
                 if (Char.IsUpper(textToWrite[i]))
@@ -30,9 +30,9 @@ namespace Pencil_Durability_Kata
                 {
                     break;
                 }
-                result += textToWrite[i];
+                paper += textToWrite[i];
             }
-            return result;
+            return paper;
         }
 
         public int GetDurability()

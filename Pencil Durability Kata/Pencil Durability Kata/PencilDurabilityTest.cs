@@ -71,5 +71,15 @@ namespace Pencil_Durability_Kata
             pencilDurability.InitializePaper(paper);
             Assert.Equal("Test paper", pencilDurability.GetPaperText());
         }
+
+        [Fact]
+        public void VerifyPencilAppendsTextToPaperWithExistingText()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10);
+            string paper = "Test paper";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Write(" appending");
+            Assert.Equal("Test paper appending", pencilDurability.GetPaperText());
+        }
     }
 }
