@@ -16,12 +16,19 @@ namespace Pencil_Durability_Kata
             string result = string.Empty;
             for(int i = 0; i < textToWrite.Length; i++)
             {
-                if(durability == 0)
+                if (Char.IsUpper(textToWrite[i]))
+                {
+                    durability -= 2;
+                }
+                else
+                {
+                    durability--;
+                }
+                if (durability < 0)
                 {
                     break;
                 }
                 result += textToWrite[i];
-                durability--;
             }
             return result;
         }
