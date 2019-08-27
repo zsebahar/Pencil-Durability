@@ -89,5 +89,15 @@ namespace Pencil_Durability_Kata
             pencilDurability.Sharpen();
             Assert.Equal(1, pencilDurability.GetLength());
         }
+
+        [Fact]
+        public void VerifyWhenPencilIsSharpenedItRegainsInitialDurability()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 2);
+            pencilDurability.Sharpen();
+            pencilDurability.Write("test");
+            pencilDurability.Sharpen();
+            Assert.Equal(10, pencilDurability.GetDurability());
+        }
     }
 }

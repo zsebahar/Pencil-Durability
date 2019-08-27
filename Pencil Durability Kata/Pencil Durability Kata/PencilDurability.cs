@@ -8,10 +8,12 @@ namespace Pencil_Durability_Kata
         private int durability;
         private string paper;
         private int length;
+        private int initialDurability;
 
         public PencilDurability(int durability, int length)
         {
             this.durability = durability;
+            initialDurability = durability;
             this.paper = string.Empty;
             this.length = length;
         }
@@ -55,6 +57,7 @@ namespace Pencil_Durability_Kata
         public void Sharpen()
         {
             length -= 1;
+            durability = initialDurability;
         }
 
         public int GetLength()
