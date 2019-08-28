@@ -119,5 +119,16 @@ namespace Pencil_Durability_Kata
             pencilDurability.Erase("test");
             Assert.Equal("Test my eraser     ", pencilDurability.GetPaperText());
         }
+
+        [Fact]
+        public void VerifyWhenWordOccursTwiceOnPaperAndEraseCalledTwiceForThatWordBothOccurrencesAreErased()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 1);
+            string paper = "test my eraser test";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Erase("test");
+            pencilDurability.Erase("test");
+            Assert.Equal("     my eraser     ", pencilDurability.GetPaperText());
+        }
     }
 }
