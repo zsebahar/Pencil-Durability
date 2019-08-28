@@ -67,5 +67,24 @@ namespace Pencil_Durability_Kata
         {
             return length;
         }
+
+        public void Erase(string erasedText)
+        {
+            int startIndex = paper.IndexOf(erasedText);
+            int lastIndex = startIndex + erasedText.Length - 1;
+            string newPaper = string.Empty;
+            for(int i = 0; i < paper.Length; i++)
+            {
+                if(i < startIndex || i > lastIndex)
+                {
+                    newPaper += paper[i];
+                }
+                else
+                {
+                    newPaper += ' ';
+                }
+            }
+            paper = newPaper;
+        }
     }
 }
