@@ -70,7 +70,7 @@ namespace Pencil_Durability_Kata
 
         public void Erase(string erasedText)
         {
-            int startIndex = paper.IndexOf(erasedText);
+            int startIndex = paper.LastIndexOf(erasedText);
             int lastIndex = startIndex + erasedText.Length - 1;
             string newPaper = string.Empty;
             for(int i = 0; i < paper.Length; i++)
