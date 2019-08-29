@@ -140,5 +140,15 @@ namespace Pencil_Durability_Kata
             pencilDurability.Erase("Bill");
             Assert.Equal(0, pencilDurability.GetEraserDurability());
         }
+
+        [Fact]
+        public void VerifyWhenEraserDurabilityIsFiveAndWordBillIsErasedWithSpaceThenEraserDurabilityIsOne()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 5);
+            string paper = "Buffalo Bill";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Erase(" Bill");
+            Assert.Equal(1, pencilDurability.GetEraserDurability());
+        }
     }
 }

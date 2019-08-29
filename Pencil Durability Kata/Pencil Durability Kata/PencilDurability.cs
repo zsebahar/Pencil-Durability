@@ -84,7 +84,10 @@ namespace Pencil_Durability_Kata
                 else
                 {
                     newPaper += ' ';
-                    eraserDurability--;
+                    if (paper[i] != ' ')
+                    {
+                        eraserDurability--;
+                    }
                 }
             }
             paper = newPaper;
