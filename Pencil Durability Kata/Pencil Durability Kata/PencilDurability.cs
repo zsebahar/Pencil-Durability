@@ -115,6 +115,7 @@ namespace Pencil_Durability_Kata
                 {
                     newPaper += textToAdd[textToAddIndex];
                     textToAddIndex++;
+                    pencilDurability--;
                 }
             }
             paper = newPaper;
