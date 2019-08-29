@@ -50,7 +50,7 @@ namespace Pencil_Durability_Kata
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             pencilDurability.Write("a ");
-            int durability = pencilDurability.GetDurability();
+            int durability = pencilDurability.GetPencilDurability();
             Assert.Equal(1, durability);
         }
 
@@ -59,7 +59,7 @@ namespace Pencil_Durability_Kata
         {
             PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             pencilDurability.Write("a\n");
-            int durability = pencilDurability.GetDurability();
+            int durability = pencilDurability.GetPencilDurability();
             Assert.Equal(1, durability);
         }
 
@@ -97,7 +97,7 @@ namespace Pencil_Durability_Kata
             pencilDurability.Sharpen();
             pencilDurability.Write("test");
             pencilDurability.Sharpen();
-            Assert.Equal(10, pencilDurability.GetDurability());
+            Assert.Equal(10, pencilDurability.GetPencilDurability());
         }
 
         [Fact]
@@ -107,7 +107,7 @@ namespace Pencil_Durability_Kata
             pencilDurability.Sharpen();
             pencilDurability.Write("test");
             pencilDurability.Sharpen();
-            Assert.Equal(6, pencilDurability.GetDurability());
+            Assert.Equal(6, pencilDurability.GetPencilDurability());
         }
 
         [Fact]

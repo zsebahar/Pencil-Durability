@@ -5,16 +5,16 @@ namespace Pencil_Durability_Kata
 {
     internal class PencilDurability
     {
-        private int durability;
+        private int pencilDurability;
         private string paper;
         private int length;
         private readonly int initialDurability;
         private int eraserDurability;
 
-        public PencilDurability(int durability, int length, int eraserDurability)
+        public PencilDurability(int pencilDurability, int length, int eraserDurability)
         {
-            this.durability = durability;
-            initialDurability = durability;
+            this.pencilDurability = pencilDurability;
+            initialDurability = pencilDurability;
             paper = string.Empty;
             this.length = length;
             this.eraserDurability = eraserDurability;
@@ -26,13 +26,13 @@ namespace Pencil_Durability_Kata
             {
                 if (char.IsUpper(textToWrite[i]))
                 {
-                    durability -= 2;
+                    pencilDurability -= 2;
                 }
                 else if(textToWrite[i] != ' ' && textToWrite[i] != '\n')
                 {
-                    durability--;
+                    pencilDurability--;
                 }
-                if (durability < 0)
+                if (pencilDurability < 0)
                 {
                     break;
                 }
@@ -41,9 +41,9 @@ namespace Pencil_Durability_Kata
             return paper;
         }
 
-        public int GetDurability()
+        public int GetPencilDurability()
         {
-            return durability;
+            return pencilDurability;
         }
 
         public void InitializePaper(string paper)
@@ -61,7 +61,7 @@ namespace Pencil_Durability_Kata
             if (length > 0)
             {
                 length -= 1;
-                durability = initialDurability;
+                pencilDurability = initialDurability;
             }
         }
 
