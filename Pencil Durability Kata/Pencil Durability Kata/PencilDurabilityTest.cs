@@ -8,7 +8,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsOneAndPencilWritesOneLetterTheSameLetterIsReturned()
         {
-            PencilDurability pencilDurability = new PencilDurability(1, 1);
+            PencilDurability pencilDurability = new PencilDurability(1, 1, 10);
             string result = pencilDurability.Write("t");
             Assert.Equal("t", result);
         }
@@ -16,7 +16,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsOneAndPencilWritesTwoLettersOnlyFirstLetterIsReturned()
         {
-            PencilDurability pencilDurability = new PencilDurability(1, 1);
+            PencilDurability pencilDurability = new PencilDurability(1, 1, 10);
             string result = pencilDurability.Write("te");
             Assert.Equal("t", result);
         }
@@ -24,7 +24,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsTwoAndPencilWritesTwoLettersSameTwoLettersAreReturned()
         {
-            PencilDurability pencilDurability = new PencilDurability(2, 1);
+            PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             string result = pencilDurability.Write("te");
             Assert.Equal("te", result);
         }
@@ -32,7 +32,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsOneAndPencilWritesACapitalLetterAnEmptyStringIsReturned()
         {
-            PencilDurability pencilDurability = new PencilDurability(1, 1);
+            PencilDurability pencilDurability = new PencilDurability(1, 1, 10);
             string result = pencilDurability.Write("A");
             Assert.Equal(string.Empty, result);
         }
@@ -40,7 +40,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsTwoAndPencilWritesOneCapitalLetterTheSameLetterIsReturned()
         {
-            PencilDurability pencilDurability = new PencilDurability(2, 1);
+            PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             string result = pencilDurability.Write("A");
             Assert.Equal("A", result);
         }
@@ -48,7 +48,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsTwoAndPencilWritesOneLowerCaseLetterAndOneSpaceDurabilityIsOne()
         {
-            PencilDurability pencilDurability = new PencilDurability(2, 1);
+            PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             pencilDurability.Write("a ");
             int durability = pencilDurability.GetDurability();
             Assert.Equal(1, durability);
@@ -57,7 +57,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenDurabilityIsTwoAndPencilWritesOneLowerCaseLetterAndNewlineDurabilityIsOne()
         {
-            PencilDurability pencilDurability = new PencilDurability(2, 1);
+            PencilDurability pencilDurability = new PencilDurability(2, 1, 10);
             pencilDurability.Write("a\n");
             int durability = pencilDurability.GetDurability();
             Assert.Equal(1, durability);
@@ -66,7 +66,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenPaperIsInitializedThenTextOnPaperCanBeRead()
         {
-            PencilDurability pencilDurability = new PencilDurability(1, 1);
+            PencilDurability pencilDurability = new PencilDurability(1, 1, 10);
             string paper = "Test paper";
             pencilDurability.InitializePaper(paper);
             Assert.Equal("Test paper", pencilDurability.GetPaperText());
@@ -75,7 +75,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyPencilAppendsTextToPaperWithExistingText()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 1);
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 10);
             string paper = "Test paper";
             pencilDurability.InitializePaper(paper);
             pencilDurability.Write(" appending");
@@ -85,7 +85,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenPencilIsSharpenedTheLengthIsReducedByOne()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 2);
+            PencilDurability pencilDurability = new PencilDurability(10, 2, 10);
             pencilDurability.Sharpen();
             Assert.Equal(1, pencilDurability.GetLength());
         }
@@ -93,7 +93,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenPencilIsSharpenedItRegainsInitialDurability()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 2);
+            PencilDurability pencilDurability = new PencilDurability(10, 2, 10);
             pencilDurability.Sharpen();
             pencilDurability.Write("test");
             pencilDurability.Sharpen();
@@ -103,7 +103,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenPencilIsSharpenedAndLengthIsZeroInitialDurabilityIsNotRegained()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 0);
+            PencilDurability pencilDurability = new PencilDurability(10, 0, 10);
             pencilDurability.Sharpen();
             pencilDurability.Write("test");
             pencilDurability.Sharpen();
@@ -113,7 +113,7 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenTheWordTestIsErasedThenLastOccurrenceOfTestOnPaperIsReplacedWithWhitespace()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 1);
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 10);
             string paper = "Test my eraser test";
             pencilDurability.InitializePaper(paper);
             pencilDurability.Erase("test");
@@ -123,12 +123,22 @@ namespace Pencil_Durability_Kata
         [Fact]
         public void VerifyWhenWordOccursTwiceOnPaperAndEraseCalledTwiceForThatWordBothOccurrencesAreErased()
         {
-            PencilDurability pencilDurability = new PencilDurability(10, 1);
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 10);
             string paper = "test my eraser test";
             pencilDurability.InitializePaper(paper);
             pencilDurability.Erase("test");
             pencilDurability.Erase("test");
             Assert.Equal("     my eraser     ", pencilDurability.GetPaperText());
+        }
+
+        [Fact]
+        public void VerifyWhenEraserDurabilityIsFourAndWordBillIsErasedThenEraserDurabilityIsZero()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 4);
+            string paper = "Buffalo Bill";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Erase("Bill");
+            Assert.Equal(0, pencilDurability.GetEraserDurability());
         }
     }
 }

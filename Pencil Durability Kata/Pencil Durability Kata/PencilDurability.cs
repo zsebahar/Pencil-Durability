@@ -9,13 +9,15 @@ namespace Pencil_Durability_Kata
         private string paper;
         private int length;
         private readonly int initialDurability;
+        private int eraserDurability;
 
-        public PencilDurability(int durability, int length)
+        public PencilDurability(int durability, int length, int eraserDurability)
         {
             this.durability = durability;
             initialDurability = durability;
             paper = string.Empty;
             this.length = length;
+            this.eraserDurability = eraserDurability;
         }
 
         public string Write(string textToWrite)
@@ -82,9 +84,15 @@ namespace Pencil_Durability_Kata
                 else
                 {
                     newPaper += ' ';
+                    eraserDurability--;
                 }
             }
             paper = newPaper;
+        }
+
+        public int GetEraserDurability()
+        {
+            return eraserDurability;
         }
     }
 }
