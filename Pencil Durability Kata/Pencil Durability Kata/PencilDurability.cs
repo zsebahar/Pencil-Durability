@@ -114,8 +114,15 @@ namespace Pencil_Durability_Kata
                 else
                 {
                     newPaper += textToAdd[textToAddIndex];
+                    if (char.IsUpper(textToAdd[textToAddIndex]))
+                    {
+                        pencilDurability -= 2;
+                    }
+                    else
+                    {
+                        pencilDurability--;
+                    }
                     textToAddIndex++;
-                    pencilDurability--;
                 }
             }
             paper = newPaper;
