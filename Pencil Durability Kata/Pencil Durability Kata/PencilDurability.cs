@@ -75,9 +75,9 @@ namespace Pencil_Durability_Kata
             int startIndex = paper.LastIndexOf(erasedText);
             int lastIndex = startIndex + erasedText.Length - 1;
             string newPaper = string.Empty;
-            for(int i = 0; i < paper.Length; i++)
+            for(int i = paper.Length - 1; i >= 0; i--)
             {
-                if(i < startIndex || i > lastIndex)
+                if((i < startIndex || i > lastIndex) || eraserDurability == 0)
                 {
                     newPaper += paper[i];
                 }
@@ -90,7 +90,9 @@ namespace Pencil_Durability_Kata
                     }
                 }
             }
-            paper = newPaper;
+            char[] reversedString = newPaper.ToCharArray();
+            Array.Reverse(reversedString);
+            paper = new string(reversedString);
         }
 
         public int GetEraserDurability()
