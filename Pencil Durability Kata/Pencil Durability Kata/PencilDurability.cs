@@ -99,5 +99,25 @@ namespace Pencil_Durability_Kata
         {
             return eraserDurability;
         }
+
+        public void Edit(int startIndex, string textToAdd)
+        {
+            int lastIndex = startIndex + textToAdd.Length - 1;
+            string newPaper = string.Empty;
+            int textToAddIndex = 0;
+            for (int i = 0; i < paper.Length; i++)
+            {
+                if ((i < startIndex || i > lastIndex) || eraserDurability == 0)
+                {
+                    newPaper += paper[i];
+                }
+                else
+                {
+                    newPaper += textToAdd[textToAddIndex];
+                    textToAddIndex++;
+                }
+            }
+            paper = newPaper;
+        }
     }
 }

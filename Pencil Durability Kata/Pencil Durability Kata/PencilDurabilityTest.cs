@@ -160,5 +160,16 @@ namespace Pencil_Durability_Kata
             pencilDurability.Erase("Bill");
             Assert.Equal("Buffalo B   ", pencilDurability.GetPaperText());
         }
+
+        [Fact]
+        public void VerifyWhenPaperHasFiveConsecutiveWhiteSpacesWordTheCanBeAddedToMiddleThreeWhiteSpacesOnPaper()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 3);
+            string paper = "This is     paper";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Edit(8, "the");
+            string result = pencilDurability.GetPaperText();
+            Assert.Equal("This is the paper", pencilDurability.GetPaperText());
+        }
     }
 }
