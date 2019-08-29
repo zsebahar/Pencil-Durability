@@ -74,25 +74,25 @@ namespace Pencil_Durability_Kata
         {
             int startIndex = paper.LastIndexOf(erasedText);
             int lastIndex = startIndex + erasedText.Length - 1;
-            string newPaper = string.Empty;
+            string newPaperReversed = string.Empty;
             for(int i = paper.Length - 1; i >= 0; i--)
             {
                 if((i < startIndex || i > lastIndex) || eraserDurability == 0)
                 {
-                    newPaper += paper[i];
+                    newPaperReversed += paper[i];
                 }
                 else
                 {
-                    newPaper += ' ';
+                    newPaperReversed += ' ';
                     if (paper[i] != ' ')
                     {
                         eraserDurability--;
                     }
                 }
             }
-            char[] reversedString = newPaper.ToCharArray();
-            Array.Reverse(reversedString);
-            paper = new string(reversedString);
+            char[] newPaper = newPaperReversed.ToCharArray();
+            Array.Reverse(newPaper);
+            paper = new string(newPaper);
         }
 
         public int GetEraserDurability()
