@@ -123,7 +123,14 @@ namespace Pencil_Durability_Kata
                     }
                     if (pencilDurability >= 0)
                     {
-                        newPaper += textToAdd[textToAddIndex];
+                        if (paper[i] != ' ')
+                        {
+                            newPaper += '@';
+                        }
+                        else
+                        {
+                            newPaper += textToAdd[textToAddIndex];
+                        }
                         textToAddIndex++;
                     }
                     else
