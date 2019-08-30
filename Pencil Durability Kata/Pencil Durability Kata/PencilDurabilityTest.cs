@@ -219,5 +219,15 @@ namespace Pencil_Durability_Kata
             pencilDurability.Edit(13, "enough");
             Assert.Equal("There is not enoug@oom", pencilDurability.GetPaperText());
         }
+
+        [Fact]
+        public void VerifyWhenEditingPaperAndNextTextCollidesWithTwoExistingWordsNextTextFillsWhiteSpaceAndAtSymbolReplacesCollidingLetters()
+        {
+            PencilDurability pencilDurability = new PencilDurability(10, 1, 1);
+            string paper = "There is not room";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Edit(8, "enough");
+            Assert.Equal("There ise@@@g@oom", pencilDurability.GetPaperText());
+        }
     }
 }
