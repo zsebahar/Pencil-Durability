@@ -121,7 +121,7 @@ namespace Pencil_Durability_Kata
                     }
                     else
                     {
-                        newPaper += ' ';
+                        newPaper += paper[i];
                     }
                     
                 }
