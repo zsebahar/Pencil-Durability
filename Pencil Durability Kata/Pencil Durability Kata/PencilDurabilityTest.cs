@@ -189,5 +189,15 @@ namespace Pencil_Durability_Kata
             pencilDurability.Edit(8, "THE");
             Assert.Equal(4, pencilDurability.GetPencilDurability());
         }
+
+        [Fact]
+        public void VerifyWhenPaperIsEditWithPencilDurabilityTwoAndThreeLowercaseLettersOnlyFirstTwoCharactersAdded()
+        {
+            PencilDurability pencilDurability = new PencilDurability(2, 1, 3);
+            string paper = "This is     paper";
+            pencilDurability.InitializePaper(paper);
+            pencilDurability.Edit(8, "the");
+            Assert.Equal("This is th  paper", pencilDurability.GetPaperText());
+        }
     }
 }

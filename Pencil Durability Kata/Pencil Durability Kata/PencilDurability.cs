@@ -113,7 +113,6 @@ namespace Pencil_Durability_Kata
                 }
                 else
                 {
-                    newPaper += textToAdd[textToAddIndex];
                     if (char.IsUpper(textToAdd[textToAddIndex]))
                     {
                         pencilDurability -= 2;
@@ -122,7 +121,16 @@ namespace Pencil_Durability_Kata
                     {
                         pencilDurability--;
                     }
-                    textToAddIndex++;
+                    if (pencilDurability >= 0)
+                    {
+                        newPaper += textToAdd[textToAddIndex];
+                        textToAddIndex++;
+                    }
+                    else
+                    {
+                        newPaper += ' ';
+                    }
+                    
                 }
             }
             paper = newPaper;
