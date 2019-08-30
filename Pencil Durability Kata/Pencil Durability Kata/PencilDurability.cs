@@ -24,14 +24,7 @@ namespace Pencil_Durability_Kata
         {
             for(int i = 0; i < textToWrite.Length; i++)
             {
-                if (char.IsUpper(textToWrite[i]))
-                {
-                    pencilDurability -= 2;
-                }
-                else if(textToWrite[i] != ' ' && textToWrite[i] != '\n')
-                {
-                    pencilDurability--;
-                }
+                ReduceDurabilityBasedOnCharacter(textToWrite[i]);
                 if (pencilDurability < 0)
                 {
                     break;
@@ -113,14 +106,7 @@ namespace Pencil_Durability_Kata
                 }
                 else
                 {
-                    if (char.IsUpper(textToAdd[textToAddIndex]))
-                    {
-                        pencilDurability -= 2;
-                    }
-                    else
-                    {
-                        pencilDurability--;
-                    }
+                    ReduceDurabilityBasedOnCharacter(textToAdd[textToAddIndex]);
                     if (pencilDurability >= 0)
                     {
                         if (paper[i] != ' ')
@@ -141,6 +127,18 @@ namespace Pencil_Durability_Kata
                 }
             }
             paper = newPaper;
+        }
+
+        private void ReduceDurabilityBasedOnCharacter(char character)
+        {
+            if (char.IsUpper(character))
+            {
+                pencilDurability -= 2;
+            }
+            else if (character != ' ' && character != '\n')
+            {
+                pencilDurability--;
+            }
         }
     }
 }
