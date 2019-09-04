@@ -11,10 +11,10 @@ Link to SDK Download: https://dotnet.microsoft.com/download/dotnet-core/2.2
 To run the tests, the solution must first be downloaded and unzipped. Once unzipped, navigate to 
 Pencil-Durability-master\Pencil-Durability-master\Pencil Durability Kata
 
-Once you are navigated to this directory, run the following command to build the solution
+Once you are navigated to this directory, run the following command to build the solution:
 dotnet build
 
-After a successful build, run the following command
+After a successful build, run the following command: 
 dotnet test "Pencil Durability Kata\Pencil Durability Kata.csproj"
 
 This will run all the tests within the solution and output the number of tests that passed, failed, and skipped
